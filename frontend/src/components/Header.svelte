@@ -30,7 +30,9 @@
     let isLoading = false;
     let searchError = '';
     
-    const baseUrl = import.meta.env.VITE_BACKEND_API_URL || '';
+    const baseUrl = import.meta.env.DEV
+        ? 'http://localhost:8002'  // Для разработки
+        : (import.meta.env.VITE_BACKEND_API_URL || ''); // Для продакшена
 
     const performSearch = debounce(async (query: string) => {
         // Очищаем результаты, если запрос короче 3 символов
