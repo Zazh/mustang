@@ -18,7 +18,7 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
 
     try {
         // 1. Загрузка всех категорий
-        const categoriesResponse = await fetch(`${baseUrl}/api/products/categories/`);
+        const categoriesResponse = await fetch(`${baseUrl}/products/categories/`);
         if (!categoriesResponse.ok) throw new Error('Categories fetch failed');
         const categories: Category[] = await categoriesResponse.json();
 
@@ -37,7 +37,7 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
 
         // 4. Загрузка продуктов с фильтрацией по имени категории
         const productsResponse = await fetch(
-            `${baseUrl}/api/products/products/?category__name=${encodeURIComponent(currentCategory.name)}`
+            `${baseUrl}/products/products/?category__name=${encodeURIComponent(currentCategory.name)}`
         );
 
         if (!productsResponse.ok) {
