@@ -161,7 +161,7 @@
             {:else if searchResults.length > 0}
                 {#each searchResults as product}
                 <li>
-                    <a href="https://mustang-farbe.kz/products/product/{product.id}" class="[ border-1 border-gray-200 ] flex justify-between items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-white hover:bg-gray-100 group hover:shadow">
+                    <a href="https://mustang-farbe.kz/products/product/{product.id}" rel="external" class="[ border-1 border-gray-200 ] flex justify-between items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-white hover:bg-gray-100 group hover:shadow">
                         <span class="flex flex-col ms-2">
                             <span class="whitespace-nowrap text-md">{product.name}</span>
                             <span class="inline-flex items-center text-xs font-medium text-blue-600 rounded-sm tracking-wide">{product.category_name}</span>
