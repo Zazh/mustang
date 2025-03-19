@@ -31,9 +31,9 @@
         </div>
 
         <div class="px-6 pt-8 flex flex-col gap-4">
-            <a href="/" class="block pt-2 font-[500] text-black uppercase">Главная</a>
-            <a href="/category" class="block pt-2 font-[500] text-black uppercase">Продукция</a>
-            <a href="/pos" class="block pt-2 font-[500] text-black uppercase">Точки продаж</a>
+            <a href="/" rel="external" class="block pt-2 font-[500] text-black uppercase">Главная</a>
+            <a href="/category" rel="external" class="block pt-2 font-[500] text-black uppercase">Продукция</a>
+            <a href="/pos" rel="external" class="block pt-2 font-[500] text-black uppercase">Точки продаж</a>
         </div>
     </aside>
 
