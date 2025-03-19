@@ -13,9 +13,12 @@ export const load: PageLoad = async ({ fetch, params }) => {
 
     console.log('VITE_BACKEND_API_URL:', import.meta.env.VITE_BACKEND_API_URL);
     console.log('Fetch URL:', `${baseUrl}/pointsales/`);
-    console.log('Ответ от сервера:', text);
+
 
 
     const pointsales = await res.json();
+
+    console.log('Ответ от сервера:', pointsales);
+
     return { pointsales };
 };
