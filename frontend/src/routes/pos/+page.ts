@@ -11,14 +11,10 @@ export const load: PageLoad = async ({ fetch, params }) => {
         throw new Error('Failed to fetch product');
     }
 
-    console.log('VITE_BACKEND_API_URL:', import.meta.env.VITE_BACKEND_API_URL);
-    console.log('Fetch URL:', `${baseUrl}/pointsales/`);
 
 
 
     const pointsales = await res.json();
-
-    console.log('Ответ от сервера:', pointsales);
 
     return { pointsales };
 };
