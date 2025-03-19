@@ -1,0 +1,407 @@
+[
+{
+  "model": "pos.pointssales",
+  "pk": 1,
+  "fields": {
+    "name": "MUSTANG",
+    "country": "Казахстан",
+    "city": "Астана",
+    "address": "ул. Московская, 9. ТД «Экспо Строй», зал №5",
+    "created_at": "2025-03-13T15:21:46.012Z",
+    "updated_at": "2025-03-18T21:03:56.194Z",
+    "is_points": true
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 2,
+  "fields": {
+    "name": "Libelle Астана",
+    "country": "Казахстан",
+    "city": "Астана",
+    "address": "ул. Керей –Жанибек хандар, 50/1",
+    "created_at": "2025-03-13T16:11:34.803Z",
+    "updated_at": "2025-03-18T20:33:40.743Z",
+    "is_points": true
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 3,
+  "fields": {
+    "name": "Libelle Алматы",
+    "country": "Казахстан",
+    "city": "Алматы",
+    "address": "пр-т «Райымбека», 210/7",
+    "created_at": "2025-03-18T15:44:09.956Z",
+    "updated_at": "2025-03-18T20:33:29.084Z",
+    "is_points": true
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 4,
+  "fields": {
+    "name": "МЕГАСТРОЙ DIY",
+    "country": "Казахстан",
+    "city": "Астана",
+    "address": "ул. Сембинова 19/1.  ТД «МЕГАСТРОЙ АСТАНА DIY»",
+    "created_at": "2025-03-18T20:35:10.779Z",
+    "updated_at": "2025-03-18T20:35:10.779Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 5,
+  "fields": {
+    "name": "Магазин Идеального Ремонта",
+    "country": "Казахстан",
+    "city": "Астана",
+    "address": "ул. Роза Багланова, 11. ТЦ «NCITI» «Магазин Идеального Ремонта»",
+    "created_at": "2025-03-18T20:36:11.107Z",
+    "updated_at": "2025-03-18T20:36:11.107Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 6,
+  "fields": {
+    "name": "Строительная химия",
+    "country": "Казахстан",
+    "city": "Костанай",
+    "address": "ул. Уральская,54 (р-он Аэропорта). Магазин “Строительная химия”",
+    "created_at": "2025-03-18T20:37:09.263Z",
+    "updated_at": "2025-03-18T20:37:09.263Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 7,
+  "fields": {
+    "name": "ТД \"Арсенал\"",
+    "country": "Казахстан",
+    "city": "Кызылорда",
+    "address": "ул. Коркыт ата, 117. ТД \"Арсенал\"",
+    "created_at": "2025-03-18T20:38:17.030Z",
+    "updated_at": "2025-03-18T20:38:17.030Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 8,
+  "fields": {
+    "name": "Veronti Home",
+    "country": "Караганда",
+    "city": "Казахстан",
+    "address": "137-й учетный квартал, ст.039, бутик Д5. Салон «Veronti Home»",
+    "created_at": "2025-03-18T20:38:56.869Z",
+    "updated_at": "2025-03-18T20:38:56.869Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 9,
+  "fields": {
+    "name": "Prodecor.krg",
+    "country": "Казахстан",
+    "city": "Караганда",
+    "address": "ул. Камали Дюсембекова, 83/2. Салон «Ремонт помещений «Prodecor.krg»",
+    "created_at": "2025-03-18T20:39:35.091Z",
+    "updated_at": "2025-03-18T20:39:35.091Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 10,
+  "fields": {
+    "name": "Tomiris",
+    "country": "Казахстан",
+    "city": "Семей",
+    "address": "ул. Каржаубайулы, 183Б, Студия строительной эстетики «Tomiris»",
+    "created_at": "2025-03-18T20:40:20.582Z",
+    "updated_at": "2025-03-18T20:40:20.582Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 11,
+  "fields": {
+    "name": "Салон красок и декора",
+    "country": "Казахстан",
+    "city": "Актобе",
+    "address": "пр-т «Санкибай Батыра», 26Д, 1этаж, 3 бутик. Салон красок и декора",
+    "created_at": "2025-03-18T20:41:05.402Z",
+    "updated_at": "2025-03-18T20:41:05.402Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 12,
+  "fields": {
+    "name": "Seven Colors",
+    "country": "Казахстан",
+    "city": "Шымкент",
+    "address": "ул. Айтеке би, д. 1/4 , Строительный рынок «Старый город», Магазин «Seven Colors», при магазине «Remont Plus»",
+    "created_at": "2025-03-18T20:42:04.046Z",
+    "updated_at": "2025-03-18T21:00:26.007Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 13,
+  "fields": {
+    "name": "Seven Colors Шымкент",
+    "country": "Казахстан",
+    "city": "Шымкент",
+    "address": "ул. Байдибек би, д. 116 к4. Магазин «Seven Colors»",
+    "created_at": "2025-03-18T20:43:23.620Z",
+    "updated_at": "2025-03-18T20:43:23.620Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 14,
+  "fields": {
+    "name": "Красный мамонт",
+    "country": "Россия",
+    "city": "Новосибирск",
+    "address": "ул. Светлановская д. 50 к.1, 1 этаж. ТВЦ «Красный мамонт»",
+    "created_at": "2025-03-18T20:45:08.214Z",
+    "updated_at": "2025-03-18T20:45:08.214Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.pointssales",
+  "pk": 15,
+  "fields": {
+    "name": "Центр декора «Крафика»",
+    "country": "Россия",
+    "city": "Омск",
+    "address": "ул. Октябрьская, 102. Центр декора «Крафика»",
+    "created_at": "2025-03-18T20:46:02.076Z",
+    "updated_at": "2025-03-18T20:46:02.076Z",
+    "is_points": false
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 1,
+  "fields": {
+    "store": 2,
+    "phone": "+7 701 071 6799",
+    "email": "ast.mustang@mail.ru",
+    "socialName": "Instagram",
+    "socialAcc": "libelle_salondekora",
+    "socialLink": "https://www.instagram.com/libelle_salondekora/",
+    "working_hours": "Пн – Сб: 10:00 - 18:00",
+    "created_at": "2025-03-18T15:15:56.245Z",
+    "updated_at": "2025-03-18T20:30:24.039Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 2,
+  "fields": {
+    "store": 3,
+    "phone": "+7 707 392 8282",
+    "email": "libelle.almaty2024@gmail.com",
+    "socialName": "Instagram",
+    "socialAcc": "libelle_kraski_decor",
+    "socialLink": "https://www.instagram.com/libelle_kraski_decor/",
+    "working_hours": "Пн – Пт: 10:00 - 18:00\r\nСб– Вс: 10:00 - 15:00",
+    "created_at": "2025-03-18T15:44:09.961Z",
+    "updated_at": "2025-03-18T20:33:29.085Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 3,
+  "fields": {
+    "store": 4,
+    "phone": "+7 7172 52-16-16",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "Пн – Вс: 10:00 - 18:00",
+    "created_at": "2025-03-18T20:35:10.784Z",
+    "updated_at": "2025-03-18T20:35:10.784Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 4,
+  "fields": {
+    "store": 5,
+    "phone": "+7 7786372852",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "Пн – Вс: 10:00 - 22:00",
+    "created_at": "2025-03-18T20:36:11.108Z",
+    "updated_at": "2025-03-18T20:36:11.108Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 5,
+  "fields": {
+    "store": 6,
+    "phone": "+7 7142 57-61-81\r\n+7 7472328742",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "Пн – Сб: 10:00 - 18:00",
+    "created_at": "2025-03-18T20:37:09.265Z",
+    "updated_at": "2025-03-18T20:37:09.265Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 6,
+  "fields": {
+    "store": 7,
+    "phone": "+7 7242 20-52-02\r\n+7 701 140 2772",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "Пн – Вс: 10:00 - 17:00",
+    "created_at": "2025-03-18T20:38:17.032Z",
+    "updated_at": "2025-03-18T20:38:17.032Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 7,
+  "fields": {
+    "store": 8,
+    "phone": "+7 778 237 6000",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "",
+    "created_at": "2025-03-18T20:38:56.870Z",
+    "updated_at": "2025-03-18T20:38:56.870Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 8,
+  "fields": {
+    "store": 9,
+    "phone": "+7 701 749 7236",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "",
+    "created_at": "2025-03-18T20:39:35.093Z",
+    "updated_at": "2025-03-18T20:39:35.093Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 9,
+  "fields": {
+    "store": 10,
+    "phone": "+7 705 333 7379",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "",
+    "created_at": "2025-03-18T20:40:20.584Z",
+    "updated_at": "2025-03-18T20:40:20.584Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 10,
+  "fields": {
+    "store": 11,
+    "phone": "+7 705 605 8808",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "",
+    "created_at": "2025-03-18T20:41:05.404Z",
+    "updated_at": "2025-03-18T20:41:05.404Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 11,
+  "fields": {
+    "store": 13,
+    "phone": "+7 747 129 9226",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "",
+    "created_at": "2025-03-18T20:43:23.622Z",
+    "updated_at": "2025-03-18T20:43:23.622Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 12,
+  "fields": {
+    "store": 14,
+    "phone": "+7 913 465 5181\r\n+7 913 738 4729\r\n+7 913 462 3277",
+    "email": "wgart.info@yandex.ru",
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "Пн – Вс: 10:00 - 17:00",
+    "created_at": "2025-03-18T20:45:08.215Z",
+    "updated_at": "2025-03-18T20:45:08.215Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 13,
+  "fields": {
+    "store": 15,
+    "phone": "+7 913 157 9983\r\n+7 966 666 7015",
+    "email": null,
+    "socialName": null,
+    "socialAcc": null,
+    "socialLink": null,
+    "working_hours": "Пн – Сб: 10:00 - 19:00",
+    "created_at": "2025-03-18T20:46:02.078Z",
+    "updated_at": "2025-03-18T20:46:02.078Z"
+  }
+},
+{
+  "model": "pos.storeinfo",
+  "pk": 14,
+  "fields": {
+    "store": 1,
+    "phone": "+7 7172 56-06-89\r\n+7 701 071 5799",
+    "email": "ast.mustang@mail.ru",
+    "socialName": "Instagram",
+    "socialAcc": "mustangfarbe",
+    "socialLink": "https://www.instagram.com/mustangfarbe/",
+    "working_hours": "Пн – Вс: 10:00 - 18:00",
+    "created_at": "2025-03-18T20:49:20.727Z",
+    "updated_at": "2025-03-18T20:49:20.727Z"
+  }
+}
+]

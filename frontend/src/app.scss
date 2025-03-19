@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@plugin 'flowbite/plugin';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@layer base {
+    html {
+        font-family: 'HelveticaNeue', sans-serif;
+    }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+    font-family: 'Vitrino';
+    src: url('fonts/Vetrino.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('fonts/HelveticaNeue-Roman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('fonts/HelveticaNeue-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('fonts/HelveticaNeue-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+$font-family-base: 'HelveticaNeue', sans-serif;
+
+html, body {
+    font-family: $font-family-base;
+    background-color: #F7F7F7;
+}
+
+@theme {
+    --color-primary-50: #fff5f2;
+    --color-primary-100: #fff1ee;
+    --color-primary-200: #ffe4de;
+    --color-primary-300: #ffd5cc;
+    --color-primary-400: #ffbcad;
+    --color-primary-500: #fe795d;
+    --color-primary-600: #ef562f;
+    --color-primary-700: #eb4f27;
+    --color-primary-800: #cc4522;
+    --color-primary-900: #a5371b;
+
+    --color-gray-500: #CACACA;
+    --color-gray-400: #E8E8E8;
+    --color-gray-300: #8A8A8A;
+    --color-gray-200: #EEEEEE;
+
+    --color-light-300: #F7F7F7;
+
+    --font-display: "Vitrino", "sans-serif";
+}
+
+@source "../node_modules/flowbite-svelte/dist";
+
+.burger-icon-w {
+    width: 48px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+.burger-icon path{
+    transition: transform 0.25s;
+}
+.active .burger-icon path:nth-of-type(1){
+    transform: rotate(45deg);
+    transform-origin: 12px 2px;
+}
+.active .burger-icon path:nth-of-type(2){
+    transform: rotate(-45deg);
+    transform-origin: 12px 22px;
+}
