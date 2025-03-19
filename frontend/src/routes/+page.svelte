@@ -7,7 +7,7 @@
         try {
             let baseUrl = import.meta.env.VITE_BACKEND_API_URL || '';
             baseUrl = baseUrl.replace(/\/$/, ''); // удаляем слеш в конце, если он есть
-            const response = await fetch(`${baseUrl}/api/products/products/count/`);
+            const response = await fetch(`${baseUrl}/products/products/count/`);
 
             const data = await response.json();
             productCount = data.count;

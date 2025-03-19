@@ -30,9 +30,7 @@
     let isLoading = false;
     let searchError = '';
     
-    const baseUrl = import.meta.env.DEV
-        ? 'http://localhost:8002'  // Для разработки
-        : (import.meta.env.VITE_BACKEND_API_URL || ''); // Для продакшена
+    const baseUrl = import.meta.env.VITE_BACKEND_API_URL || '';
 
     const performSearch = debounce(async (query: string) => {
         // Очищаем результаты, если запрос короче 3 символов
@@ -46,7 +44,7 @@
             searchError = '';
             
             // Формируем URL с учетом baseUrl
-            const url = new URL('/api/products/products/', baseUrl);
+            const url = new URL('/products/products/', baseUrl);
             url.searchParams.append('search', query);
             
             console.log('Searching URL:', url.toString()); // Для отладки
