@@ -4,3 +4,6 @@ certbot/
 ssl-renew.log
 frontend/node_modules/
 frontend/.svelte-kit/
+
+# Secrets
+db.env
