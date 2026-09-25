@@ -10,8 +10,8 @@
         name: string;
         category_id: string | number;
         info: {
-            photo?: string;
-        };
+            photo?: string | null;
+        } | null;
     }
 
     export let description = "Широкий ассортимент качественных лакокрасочных материалов от компании Mustang Farbe: краски, покрытия, лаки и грунтовки.";
@@ -133,7 +133,7 @@
             <div class="w-full max-w-sm bg-white border border-gray-200">
                 <a href="/products/product/{product.id}">
                     <!-- Добавьте изображение продукта -->
-                    <img class="p-8 w-full aspect-square" src="{product.info.photo}" alt={product.name} title="{product.name}" />
+                    <img class="p-8 w-full aspect-square" src="{product.info?.photo ?? ''}" alt={product.name} title="{product.name}" />
                 </a>
                 <div class="px-5 pb-5">
                     <a href="/products/product/{product.id}">

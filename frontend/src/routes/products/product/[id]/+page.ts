@@ -1,14 +1,22 @@
 import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
 
-// @ts-ignore
 export const load: PageLoad = async ({ fetch, params }) => {
     const baseUrl = import.meta.env.VITE_BACKEND_API_URL || '';
 
-    const { id } = params as { id: string }; // Приводим params к нужному типу
-    const res = await fetch(`${baseUrl}/products/products/${id}/`);
+    let res: Response;
+    try {
+        res = await fetch(`${baseUrl}/products/products/${params.id}/`);
+    } catch (e) {
+        console.error('Loader error:', e);
+        throw error(500, 'Ошибка загрузки данных');
+    }
 
+    if (res.status === 404) {
+        throw error(404, 'Товар не найден');
+    }
     if (!res.ok) {
-        throw new Error('Failed to fetch product');
+        throw error(500, 'Ошибка загрузки данных');
     }
 
     const product = await res.json();

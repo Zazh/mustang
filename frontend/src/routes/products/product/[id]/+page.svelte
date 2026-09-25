@@ -1,18 +1,22 @@
 <script lang="ts">
-    import { page } from '$app/stores';
-    import { get } from 'svelte/store';
+    export let data: { product: any };
 
-    let product = get(page).data.product;
+    // Реактивно: при переходе между товарами компонент переиспользуется,
+    // и данные должны обновляться, а не фиксироваться при первом рендере.
+    $: product = data.product;
+    $: info = product.info ?? {};
+    $: advantages = Array.isArray(info.advantages) ? info.advantages : [];
+    $: attributes = Array.isArray(product.attributes) ? product.attributes : [];
 </script>
 
 <svelte:head>
     <title>{product.name} | {product.category_name} | «Mustang Farbe» </title>
-    <meta name="description" content={product.info.description} />
+    <meta name="description" content={info.description ?? ''} />
     <meta name="keywords" content="лаки, краски, фасадные краски, акриловые краски, антикоррозийные покрытия, Mustang Farbe, Profi Color" />
     <link rel="canonical" href="https://mustang-farbe.kz/products/{product.id}" />
 
     <meta property="og:title" content={product.name}  />
-    <meta property="og:description" content={product.info.description} />
+    <meta property="og:description" content={info.description ?? ''} />
     <meta property="og:image" content="https://mustang-farbe.kz/logo.ico" />
 </svelte:head>
 
@@ -62,7 +66,7 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 justify-center">
         <div class="w-full">
-            <img src="{product.info.photo}" alt="{product.name}" class="w-full lg:w-[90%] aspect-square border-1 border-gray-200">
+            <img src="{info.photo ?? ''}" alt="{product.name}" class="w-full lg:w-[90%] aspect-square border-1 border-gray-200">
         </div>
 
         <div>
@@ -76,12 +80,12 @@
                 <div class="pb-2 border-b-1 border-b-gray-500">
                     <div>
                         <p class="pb-3 [ text-sm ]">
-                            {product.info.description}
+                            {info.description ?? ''}
                         </p>
                     </div>
 
                     <ul class="pt-3 pb-5" role="list">
-                        {#each product.info.advantages as advantage}
+                        {#each advantages as advantage}
                         <li class="flex items-center [ pb-2 ]">
                             <svg class="shrink-0 w-6 h-6 text-lime-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
@@ -98,7 +102,7 @@
                         свойства
                     </h2>
                     <ul class="py-3" role="list">
-                        {#each product.attributes as attr}
+                        {#each attributes as attr}
                             <li class="flex justify-between items-center [ tracking-wider text-sm font-normal ] [ py-2 ]">
                                 <span class="font-[500] [ capitalize ]">{attr.attribute_name}:</span>
                                 <span class="font-[500] uppercase">{attr.value}</span>

@@ -11,9 +11,6 @@ export const load: PageLoad = async ({ fetch, params }) => {
         throw new Error('Failed to fetch product');
     }
 
-
-
-
     const pointsales = await res.json();
 
     return { pointsales };

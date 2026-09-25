@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import { error, redirect } from '@sveltejs/kit';
+import { error, redirect, isRedirect, isHttpError } from '@sveltejs/kit';
 
 interface Category {
     id: string | number;
@@ -11,9 +11,10 @@ interface Product {
     id: string | number;
     name: string;
     category_id: string | number;
+    info: { photo?: string | null } | null;
 }
 
-export const load: PageLoad = async ({ fetch, params, url }) => {
+export const load: PageLoad = async ({ fetch, params }) => {
     const baseUrl = import.meta.env.VITE_BACKEND_API_URL || '';
 
     try {
@@ -30,7 +31,8 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
         const categoryId = params.categoryId;
         const currentCategory = categories.find(c => c.id.toString() === categoryId);
 
-        // 3. Перенаправление если категория не существует
+        // 3. Перенаправление на первую категорию, если категория не существует
+        //    (старые ссылки, удалённые категории, опечатки в URL)
         if (!currentCategory) {
             throw redirect(307, `/products/${categories[0].id}`);
         }
@@ -57,8 +59,10 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
             }, {} as Record<string | number, number>)
         };
     } catch (e) {
+        // redirect() и error() из SvelteKit бросают не Error, а служебные объекты —
+        // их нужно пробросить дальше, иначе редирект превращается в страницу 500.
+        if (isRedirect(e) || isHttpError(e)) throw e;
         console.error('Loader error:', e);
-        if (e instanceof Error && e.message.includes('Redirect')) throw e;
         throw error(500, 'Ошибка загрузки данных');
     }
 };
