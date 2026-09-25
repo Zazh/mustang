@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+certbot/
+ssl-renew.log
+frontend/node_modules/
+frontend/.svelte-kit/

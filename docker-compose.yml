@@ -5,6 +5,11 @@ services:
       POSTGRES_USER: postgresuser
       POSTGRES_PASSWORD: kb971033
       POSTGRES_DB: db
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgresuser -d db"]
+        interval: 5s
+        timeout: 3s
+        retries: 5
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -17,38 +22,46 @@ services:
     volumes:
       - ./backend/app:/app
       - ./backend/app/media:/app/media
+      - static_volume:/app/static       
 
     ports:
       - "8002:8002"
     depends_on:
-      - db
+       db:
+        condition: service_healthy
 
   frontend:
     build: ./frontend
     ports:
-      - "8181:5173"
+      - "8181:3000"
     depends_on:
       - backend
     env_file:
       - ./frontend/.env
-    volumes:
-      - ./frontend/src:/app/src
-      - ./frontend/static:/app/static
-      - ./frontend/svelte.config.js:/app/svelte.config.js
-      - ./frontend/vite.config.ts:/app/vite.config.ts
-      - ./frontend/tsconfig.json:/app/tsconfig.json
 
   proxy:
     build: ./nginx
     # Пробрасываем 80 наружу (Nginx будет слушать на 80)
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - frontend
       - backend
     # Если нужно, монтируем volume c медиа-файлами Django:
     volumes:
+      - ./certbot:/etc/letsencrypt
       - ./frontend/build:/usr/share/nginx/html:ro
+      - static_volume:/static:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot:/etc/letsencrypt  # общий volume под серты
+      - ./frontend/build:/usr/share/nginx/html
+    depends_on:
+      - proxy
 
 volumes:
   postgres_data:
+  static_volume:

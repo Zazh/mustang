@@ -1,15 +1,10 @@
 FROM node:20-alpine
 
-RUN npm install -g pnpm
+RUN npm install -g serve
+
 WORKDIR /app
+COPY build ./build
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+EXPOSE 3000
 
-COPY svelte.config.js vite.config.ts postcss.config.cjs tailwind.config.cjs  tsconfig.json ./
-COPY src ./src
-COPY static ./static
-
-EXPOSE 5173
-
-CMD ["pnpm", "run", "dev", "--host", "0.0.0.0"]
+CMD ["serve", "-s", "build", "-l", "3000"]

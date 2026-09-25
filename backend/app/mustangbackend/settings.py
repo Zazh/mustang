@@ -22,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ugco3%f(1#fy(v1l#mg%fb6zlu5^scm8@=vbe_6en-#v))@ec+'
+
+SECRET_KEY = os.getenv("SECRET_KEY", "change-me-in-prod")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS",).split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
 
 
 # Application definition
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = os.getenv(
-    "DJANGO_CORS_ALLOWED_ORIGINS"
+    "DJANGO_CORS_ALLOWED_ORIGINS", ""
 ).split(",")
 
 CORS_ALLOW_CREDENTIALS = False  # Если нужны cookies / аутентификация
@@ -92,6 +92,10 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
     ],
+    # Указываем только JSON-renderer (убираем BrowsableAPIRenderer)
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
 }
 
 ROOT_URLCONF = 'mustangbackend.urls'
@@ -113,6 +117,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mustangbackend.wsgi.application'
+
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "static"      
 
 
 # Database

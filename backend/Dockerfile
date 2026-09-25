@@ -14,8 +14,11 @@ RUN pip install --upgrade pip && \
 # Копируем само Django-приложение (из каталога app) внутрь контейнера
 COPY ./app /app
 
+RUN python manage.py collectstatic --noinput
+
 # Открываем порт 8002 в контейнере
 EXPOSE 8002
 
 # Запускаем сервер
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8002"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8002"]
+CMD ["gunicorn", "mustangbackend.wsgi:application", "--bind", "0.0.0.0:8002"]
